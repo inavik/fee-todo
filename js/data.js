@@ -32,8 +32,18 @@ document.querySelector('form').addEventListener('submit', function handleEnter(e
   eventobj.preventDefault();
   var todoList = document.querySelector('.new-todo').value;
 
-  todo(todoList);
+  // todo(todoList);
 
+  var anArray = [];
+
+  var input = document.querySelector('.new-todo');
+    todo(input.value);
+    // console.log('did this work');
+
+  var data = {
+    text: input.value,
+    time: Date.now()
+  }
 
 
 
