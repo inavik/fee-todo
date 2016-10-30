@@ -1,36 +1,41 @@
+
 (function() {
 
+var numberOfTasks = 0;
 
   function todo(items) {
 
-  var list = document.createElement('li');
+    var list = document.createElement('li');
+    var article = document.createElement('article');
 
-  // todo.innerText = document.querySelector('.new-todo').value;
+    var check = document.createElement('button');
+    check.classList.add('check');
+    article.appendChild(check);
 
-  var article = document.createElement('article');
+    var par = document.createElement('p');
+    par.innerText = items;
+    article.appendChild(par);
 
-  var check = document.createElement('button');
-  check.classList.add('check');
-  article.appendChild(check);
+    var del = document.createElement('button');
+    del.classList.add('delete');
+    del.innerText = 'X';
+    article.appendChild(del);
 
-  var par = document.createElement('p');
-  par.innerText = items;
-  article.appendChild(par);
+    list.appendChild(article);
 
-  var del = document.createElement('button');
-  del.classList.add('delete');
-  del.innerText = 'X';
-  article.appendChild(del);
+    document
+      .querySelector('ul')
+      .appendChild(list);
 
-  list.appendChild(article);
+    }
 
-  document.querySelector('ul').appendChild(list);
-
-}
-
-document.querySelector('form').addEventListener('submit', function handleEnter(eventobj){
+document
+  .querySelector('form')
+  .addEventListener('submit', function handleEnter(eventobj){
   eventobj.preventDefault();
-  var todoList = document.querySelector('.new-todo').value;
+  var todoList = document
+                  .querySelector('.new-todo')
+                  .value;
 
   // todo(todoList);
 
@@ -45,6 +50,20 @@ document.querySelector('form').addEventListener('submit', function handleEnter(e
     time: Date.now()
   }
 
+  anArray.push(data);
+  console.log('arraypush');
+  console.log(anArray);
+
+  numberOfTasks++;
+
+
+})
+
+document.querySelector('ul').addEventListener('click', function completed (eventObj) {
+
+var element = eventObj.target.parentNode;
+
+element.classList.add('completed');
 
 
 })
