@@ -1,2 +1,1 @@
-# fee-todo
-Beginnings of a TODO list application
+Created a TODO List for class project
