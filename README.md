@@ -1,1 +1,3 @@
-Created a TODO List for class project
+### TODO List Application
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Created a TODO app using JavaScript functionality. 
