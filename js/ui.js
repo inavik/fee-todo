@@ -36,10 +36,14 @@
     });
 
   document
-    .querySelector('ul')
+    .querySelector('.items')
     .addEventListener('click', function completed (eventObj) {
         if(eventObj.target.tagName === 'BUTTON' && eventObj.target.className === 'check') {
-          eventObj.target.parentNode.classList.toggle('completed');
+          if(eventObj.target.parentNode.className === 'completed') {
+            eventObj.target.parentNode.classList.remove('completed');
+          } else {
+              eventObj.target.parentNode.classList.add('completed');
+          }
         } else if
         (eventObj.target.tagName === 'BUTTON' && eventObj.target.className === 'delete') {
           eventObj.target.parentNode.parentNode.remove();
